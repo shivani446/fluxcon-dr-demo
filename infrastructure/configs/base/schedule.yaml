@@ -1,0 +1,12 @@
+apiVersion: velero.io/v1
+kind: Schedule
+metadata:
+  name: demo-hourly
+  namespace: velero
+spec:
+  schedule: "0 * * * *"
+  template:
+    includedNamespaces:
+      - demo
+    defaultVolumesToFsBackup: true
+    ttl: 72h0m0s
