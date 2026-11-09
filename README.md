@@ -63,7 +63,7 @@ Time it. Target: 8 minutes. Record one clean run (OBS) as the fallback video.
 
 ## 4. Talk night (10 Nov, slot 12:55 am IST)
 
-- [ ] 11:00 pm: `export GITHUB_TOKEN=...` then `./scripts/reset.sh`
+- [ ] `export GITHUB_TOKEN=...` then `./scripts/reset.sh`
 - [ ] `sudo -v` right before the talk (the demo runs one `sudo rm`)
 - [ ] `kubectl config current-context` shows `kind-prod`
 - [ ] Terminal font 20pt+, dark theme, notifications off
