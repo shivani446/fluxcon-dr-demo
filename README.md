@@ -1,6 +1,6 @@
-# FluxCon DR demo: Flux + Velero + NFS CSI on kind (WSL)
+# FluxCon DR demo: Flux + Velero + NFS CSI on kind
 
-Two kind clusters (`prod`, `dr`) in WSL. NFS server and MinIO run on the WSL host, outside both clusters.
+Two kind clusters (`prod`, `dr`) in . NFS server and MinIO run on the shell host, outside both clusters.
 Flux installs csi-driver-nfs and Velero (Kopia file-system backup); Postgres runs on an `nfs-csi` PVC.
 
 ```
@@ -15,20 +15,20 @@ Kept **outside Git** (in `~/dr-demo`): MinIO credentials, host IP. `03-prep-clus
 
 ## 1. One-time setup (Windows side)
 
-1. Give WSL enough RAM. In `C:\Users\<you>\.wslconfig`:
+1. Give shell enough RAM. In `C:\Users\<you>\.shellconfig`:
    ```
-   [wsl2]
+   [shell2]
    memory=10GB
    processors=4
    ```
-2. Enable systemd in WSL. In `/etc/wsl.conf`:
+2. Enable systemd in shell. In `/etc/shell.conf`:
    ```
    [boot]
    systemd=true
    ```
-3. From PowerShell: `wsl --shutdown`, then reopen Ubuntu.
+3. From PowerShell: `shell --shutdown`, then reopen Ubuntu.
 
-## 2. One-time setup (inside WSL)
+## 2. One-time setup
 
 ```bash
 # GitHub: create an empty private repo named fluxcon-dr-demo, then:
