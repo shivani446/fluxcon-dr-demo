@@ -2,6 +2,7 @@
 # Live demo driver. Press Enter to run each command; Ctrl+C to stop.
 # Prereq: prod running with backup, dr cluster created + prepped (03) + warmed (06), NOT bootstrapped.
 source "$(dirname "$0")/env.sh"
+: "${GITHUB_TOKEN:?export GITHUB_TOKEN first, then rerun}"
 BOLD=$'\e[1m'; CYAN=$'\e[36m'; YEL=$'\e[33m'; RST=$'\e[0m'
 beat() { echo; echo "${YEL}### $*${RST}"; }
 run()  { echo; printf '%s$ %s%s' "$CYAN$BOLD" "$*" "$RST"; read -r _; eval "$@"; }
